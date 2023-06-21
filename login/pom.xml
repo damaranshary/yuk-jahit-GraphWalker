@@ -61,6 +61,11 @@
             <version>${graphwalker.version}</version>
         </dependency>
         <dependency>
+            <groupId>org.graphwalker</groupId>
+            <artifactId>graphwalker-websocket</artifactId>
+            <version>${graphwalker.version}</version>
+        </dependency>
+        <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>4.10.0</version>

@@ -9,18 +9,15 @@ import org.graphwalker.java.annotation.GraphWalker;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
 @GraphWalker()
 public class LoginTest extends ExecutionContext implements Login {
 
-    private WebDriver driver;
+    private boolean failedLogin = false;
 
-    private WebDriverWait driverWait;
+    private WebDriver driver;
 
     @BeforeExecution
     public void start() {
@@ -33,7 +30,14 @@ public class LoginTest extends ExecutionContext implements Login {
 
     @Override
     public void v_Home_LoggedIn() {
-        //WebElement Toast = new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(driver.findElement(By.id("toast-login-success-description"))));
+        driver.findElement(By.xpath("//*[contains(text(), 'Login Berhasil')]")).isDisplayed();
+
+        String LoginButton = driver.findElement(By.id("nav-cart-button")).getText();
+        String RegisterButton = driver.findElement(By.xpath("//button[@name='nav-account-dropdown']")).getText();
+
+        Assert.assertEquals("Keranjang", LoginButton);
+        Assert.assertEquals("Akun", RegisterButton);
+
         //String ToastLoginText = Toast.getText();
         // Assert.assertEquals(ToastLoginText, "Login Berhasil");
     }
@@ -57,17 +61,19 @@ public class LoginTest extends ExecutionContext implements Login {
 
     @Override
     public void v_LoginPage() {
-        //WebElement Email = new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(driver.findElement(By.id("field-:r1:-label"))));
-        //String EmailLabel = Email.getText();
+        boolean EmailLabel = driver.findElement(By.xpath("//label[contains(text(), 'Email')]")).isDisplayed();
         boolean EmailInput = driver.findElement(By.id("login-email-input")).isDisplayed();
-        // WebElement Password = new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.visibilityOf(driver.findElement(By.id("field-:r3:-label"))));
-        //String PasswordLabel = Password.getText();
+        boolean PasswordLabel = driver.findElement(By.xpath("//label[contains(text(), 'Password')]")).isDisplayed();
         boolean PasswordInput = driver.findElement(By.id("login-password-input")).isDisplayed();
 
-        //Assert.assertEquals(EmailLabel, "Email*");
+        Assert.assertTrue(EmailLabel);
         Assert.assertTrue(EmailInput);
-        //Assert.assertEquals(PasswordLabel, "Password*");
+        Assert.assertTrue(PasswordLabel);
         Assert.assertTrue(PasswordInput);
+
+        if (failedLogin) {
+            driver.findElement(By.xpath("//*[contains(text(), 'Login Gagal')]")).isDisplayed();
+        }
     }
 
     @Override
@@ -81,12 +87,17 @@ public class LoginTest extends ExecutionContext implements Login {
         EmailInput.sendKeys("user@gmail.com");
         PasswordInput.sendKeys("user1234");
         driver.findElement(By.id("login-submit-button")).click();
+
+        failedLogin = false;
     }
 
     @Override
     public void v_Home_NotLoggedIn() {
-       driver.findElement(By.id("nav-login-button")).isDisplayed();
-       // Assert.assertEquals(LoginButtonText, "Masuk");
+       String LoginButton = driver.findElement(By.id("nav-login-button")).getText();
+       String RegisterButton = driver.findElement(By.id("nav-register-button")).getText();
+
+       Assert.assertEquals("Masuk", LoginButton);
+       Assert.assertEquals("Daftar", RegisterButton);
     }
 
     @Override
@@ -104,18 +115,24 @@ public class LoginTest extends ExecutionContext implements Login {
         WebElement EmailInput = driver.findElement(By.id("login-email-input"));
         WebElement PasswordInput = driver.findElement(By.id("login-password-input"));
 
-
         EmailInput.sendKeys("user@gmail.com");
         PasswordInput.sendKeys("usersssss");
-        PasswordInput.sendKeys(Keys.ENTER);
+
         driver.findElement(By.id("login-submit-button")).click();
 
         EmailInput.clear();
         PasswordInput.clear();
+
+        failedLogin = true;
     }
 
     @Override
     public void v_ProfilePage() {
+        driver.findElement(By.xpath("//h2[contains(text(), 'Profil Saya')]")).isDisplayed();
+        String Username = driver.findElement(By.id("user-name")).getText();
+        String Email = driver.findElement(By.id("user-email")).getText();
 
+        Assert.assertEquals("Usery Tadd", Username);
+        Assert.assertEquals("user@gmail.com", Email);
     }
 }
