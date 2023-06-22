@@ -15,7 +15,7 @@ import java.io.IOException;
 public class WebSocketApplication {
 
     public static void main(String[] args) throws IOException {
-        Executor executor = new TestExecutor(LoginTest.class);
+        Executor executor = new TestExecutor(LoginTest.class, RegisterTest.class);
 
         WebSocketServer server = new WebSocketServer(8887, executor.getMachine());
         server.start();

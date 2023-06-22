@@ -21,7 +21,7 @@ public class GraphStreamApplication {
                 "org.graphstream.ui.j2dviewer.J2DGraphRenderer");
         Graph graph = new MultiGraph("GraphWalker MeetUp");
         graph.display(true);
-        Executor executor = new TestExecutor(LoginTest.class);
+        Executor executor = new TestExecutor(LoginTest.class, RegisterTest.class);
         Observer observer = new GraphStreamObserver(graph);
         executor.getMachine().addObserver(observer);
 
