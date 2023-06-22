@@ -5,11 +5,20 @@ import org.graphwalker.java.annotation.Model;
 import org.graphwalker.java.annotation.Vertex;
 import org.graphwalker.java.annotation.Edge;
 
-@Model(file = "com/yukjahit/TC001 - Login (MBT).json")
+@Model(file = "com/yukjahit/Register_And_Login.json")
 public interface Login {
 
     @Vertex()
-    void v_Home_LoggedIn();
+    void v_Home_LoggedIn_SHARED();
+
+    @Vertex()
+    void v_RegisterPage_SHARED();
+
+    @Edge()
+    void e_To_LoginPage();
+
+    @Vertex()
+    void v_Notification_LoggedIn();
 
     @Edge()
     void e_Logout();
@@ -18,25 +27,31 @@ public interface Login {
     void e_CheckProfile();
 
     @Edge()
-    void e_BackToHome();
+    void e_Login_With_InvalidCredentials();
 
     @Vertex()
     void v_LoginPage();
 
     @Edge()
-    void e_LoginWithValidCredentials();
+    void e_To_RegisterPage();
+
+    @Edge()
+    void e_To_LoginPage_LoggedIn();
 
     @Vertex()
     void v_Home_NotLoggedIn();
 
     @Edge()
-    void e_Back();
+    void e_NoAction();
 
     @Edge()
-    void e_ToLoginPage();
+    void e_Login_With_ValidCredentials();
 
     @Edge()
-    void e_LoginWithInvalidCredentials();
+    void e_To_HomePage();
+
+    @Edge()
+    void e_To_ProtectedPages();
 
     @Vertex()
     void v_ProfilePage();
