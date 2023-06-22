@@ -15,8 +15,7 @@ import java.time.Duration;
 public class LoginTest extends ExecutionContext implements Login {
 
     public static boolean failedLogin = false;
-    public static String activeName, activeEmail;
-
+    public static String activeName, activeEmail, activePhone, activeAddress;
     public static WebDriver driver;
 
     public static void loginMethod (WebDriver driver, String email, String password) {
@@ -89,9 +88,9 @@ public class LoginTest extends ExecutionContext implements Login {
         Assert.assertTrue(passwordLabel);
         Assert.assertTrue(passwordInput);
 
-        /*if (failedLogin) {
+        if (failedLogin) {
             driver.findElement(By.xpath("//*[contains(text(), 'Login Gagal')]")).isDisplayed();
-        }*/
+        }
     }
 
     @Override
@@ -111,6 +110,8 @@ public class LoginTest extends ExecutionContext implements Login {
         failedLogin = false;
         activeName = "Usery Tadd";
         activeEmail = "user@gmail.com";
+        activePhone = "08134489889";
+        activeAddress = "Kp. Sejahtera Nusa Bangsa Satu Indonesia No. 23 Rt.03/Rw.09, Padalarang Tengah, Bandung Barat, Jawa Barat,";
     }
 
     @Override
@@ -124,12 +125,12 @@ public class LoginTest extends ExecutionContext implements Login {
 
     @Override
     public void e_NoAction() {
-
+        //no action, because well, you don't need to do anything here
     }
 
     @Override
     public void v_RegisterPage_SHARED() {
-
+        // the assertions are already on the RegisterTest Class
     }
 
     @Override
@@ -148,8 +149,12 @@ public class LoginTest extends ExecutionContext implements Login {
         driver.findElement(By.xpath("//h2[contains(text(), 'Profil Saya')]")).isDisplayed();
         String userName = driver.findElement(By.id("user-name")).getText();
         String userEmail = driver.findElement(By.id("user-email")).getText();
+        String userPhone = driver.findElement(By.id("user-phone")).getText();
+        String userAddress = driver.findElement(By.id("user-address")).getText();
 
         Assert.assertEquals(activeName, userName);
         Assert.assertEquals(activeEmail, userEmail);
+        Assert.assertEquals(activePhone, userPhone);
+        Assert.assertEquals(activeAddress, userAddress);
     }
 }

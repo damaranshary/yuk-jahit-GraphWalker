@@ -75,7 +75,7 @@ public class RegisterTest extends ExecutionContext implements Register {
 
     @Override
     public void v_Home_LoggedIn_SHARED() {
-
+        //the assertions are already on the LoginTest Class
     }
 
     @Override
@@ -98,7 +98,7 @@ public class RegisterTest extends ExecutionContext implements Register {
     @Override
     public void e_Register_With_ValidData() {
         if (alreadyRegistered == 0) {
-            registerMethod(LoginTest.driver, "YukJahit MBT (11)", "yukjahit11@email.com", "yukjahitmbt", "yukjahitmbt",
+            registerMethod(LoginTest.driver, "YukJahit MBT (14)", "yukjahit14@email.com", "yukjahitmbt", "yukjahitmbt",
                     "08123456789", "Address of YukJahit (Valid Data)");
         }
         alreadyRegistered++;
@@ -109,9 +109,11 @@ public class RegisterTest extends ExecutionContext implements Register {
         if (alreadyRegistered > 1) {
             LoginTest.driver.findElement(By.id("nav-login-button")).click();
         }
-        LoginTest.loginMethod(LoginTest.driver,"yukjahit6@email.com", "yukjahitmbt" );
+        LoginTest.loginMethod(LoginTest.driver,"yukjahit14@email.com", "yukjahitmbt" );
         LoginTest.failedLogin = false;
-        LoginTest.activeName = "YukJahit MBT (6)";
-        LoginTest.activeEmail = "yukjahit6@email.com";
+        LoginTest.activeName = "YukJahit MBT (14)";
+        LoginTest.activeEmail = "yukjahit14@email.com";
+        LoginTest.activePhone = "08123456789";
+        LoginTest.activeAddress = "Address of YukJahit (Valid Data)";
     }
 }
