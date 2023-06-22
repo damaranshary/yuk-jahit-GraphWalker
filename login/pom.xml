@@ -6,8 +6,8 @@
 
     <groupId>com.yukjahit</groupId>
     <version>1.0</version>
-    <artifactId>login</artifactId>
-    <name>YukJahit Test</name>
+    <artifactId>registerAndLogin</artifactId>
+    <name>YukJahit MBT</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -58,6 +58,11 @@
         <dependency>
             <groupId>org.graphwalker</groupId>
             <artifactId>graphwalker-maven-plugin</artifactId>
+            <version>${graphwalker.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.graphwalker</groupId>
+            <artifactId>graphwalker-websocket</artifactId>
             <version>${graphwalker.version}</version>
         </dependency>
         <dependency>
