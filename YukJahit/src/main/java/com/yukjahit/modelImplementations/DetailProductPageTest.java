@@ -3,9 +3,14 @@ package com.yukjahit.modelImplementations;
 import com.yukjahit.*;
 import org.graphwalker.core.machine.ExecutionContext;
 import org.graphwalker.java.annotation.GraphWalker;
+import org.graphwalker.core.model.Requirement;
 
 import org.junit.Assert;
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 import static com.yukjahit.modelImplementations.YukJahitTest.driver;
 
@@ -27,7 +32,9 @@ public class DetailProductPageTest extends ExecutionContext implements DetailPro
 
     @Override
     public void v_Verify_AddProduct_Success() {
-       // Assert.assertTrue(driver.findElement(By.xpath("//*[contains(text(), 'Produk berhasil ditambahkan ke keranjang')]")).isDisplayed());
+        WebElement toastIsVisible = new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath("//*[contains(text(), 'Produk berhasil ditambahkan ke keranjang')]"))));
+       Assert.assertTrue(toastIsVisible.isDisplayed());
     }
 
     @Override
@@ -59,7 +66,11 @@ public class DetailProductPageTest extends ExecutionContext implements DetailPro
 
     @Override
     public void e_To_Cart_Page() {
-        driver.findElement(By.id("nav-cart-button")).click();
+        boolean toastIsInvisible = new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.invisibilityOf(driver.findElement(By.xpath("//*[contains(text(), 'Produk berhasil ditambahkan ke keranjang')]"))));
+        if (toastIsInvisible) {
+            driver.findElement(By.id("nav-cart-button")).click();
+        }
     }
 
     @Override
@@ -76,10 +87,12 @@ public class DetailProductPageTest extends ExecutionContext implements DetailPro
 
     @Override
     public void v_DetailProductPage_SHARED() {
+        String expectedProductTitle = DetailProductPageTest.expectedProductName.concat(" | YukJahit");
         String productNameOnDetailProduct = driver.findElement(By.id("product-name")).getText();
 
+        Assert.assertEquals(expectedProductTitle, driver.getTitle());
+
         Assert.assertEquals(expectedProductName, productNameOnDetailProduct);
-//        Assert.assertTrue(driver.findElement(By.xpath("//img")).isDisplayed());
         Assert.assertTrue(driver.findElement(By.id("product-price")).isDisplayed());
         Assert.assertTrue(driver.findElement(By.id("product-description")).isDisplayed());
         Assert.assertTrue(driver.findElement(By.id("product-quantity-input")).isDisplayed());

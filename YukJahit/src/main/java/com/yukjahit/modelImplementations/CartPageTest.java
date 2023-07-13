@@ -14,6 +14,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static com.yukjahit.modelImplementations.YukJahitTest.driver;
+//import static com.yukjahit.modelImplementations.YukJahitTest.expectedCartTitle;
 
 @GraphWalker
 public class CartPageTest extends ExecutionContext implements CartPage{
@@ -44,11 +45,17 @@ public class CartPageTest extends ExecutionContext implements CartPage{
 
     @Override
     public void v_CartPage_SHARED() {
+//        String expectedCartTitle = "Keranjang | YukJahit";
+//        Assert.assertEquals(expectedCartTitle, driver.getTitle());
+//        driver.navigate().refresh();
+
         if (isCartEmpty) {
             Assert.assertTrue(driver.findElement(By.xpath("//*[contains(text(), 'Keranjangmu kosong')]")).isDisplayed());
             canCheckout = false;
         } else {
-            Assert.assertTrue(driver.findElement(By.id("cart-product-card-1")).isDisplayed());
+            WebElement productInCartIsVisible = new WebDriverWait(driver, Duration.ofSeconds(10))
+                    .until(ExpectedConditions.visibilityOfElementLocated(By.id("cart-product-card-1")));
+            Assert.assertTrue(productInCartIsVisible.isDisplayed());
             Assert.assertTrue(driver.findElement(By.id("cart-summary")).isDisplayed());
             Assert.assertEquals(expectedProductInCart, driver.findElement(By.linkText(expectedProductInCart)).getText());
 
@@ -115,6 +122,8 @@ public class CartPageTest extends ExecutionContext implements CartPage{
         driver.findElement(By.xpath("//button[@name='nav-account-dropdown']")).click();
         driver.findElement(By.xpath("//a[@name='nav-order-button']")).click();
 
+        driver.navigate().refresh();
+
         canCheckout = false;
     }
 
@@ -166,6 +175,7 @@ public class CartPageTest extends ExecutionContext implements CartPage{
     public void v_Verify_CheckoutSuccess() {
         if (!checkoutIsCancelled && canCheckout) {
             Assert.assertTrue(driver.findElement(By.xpath("//div[contains(text(), 'Transaksi Berhasil')]")).isDisplayed());
+            driver.navigate().refresh();
         }
     }
 }

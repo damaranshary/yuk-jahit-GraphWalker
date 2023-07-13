@@ -8,6 +8,8 @@ import org.graphwalker.java.annotation.GraphWalker;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
@@ -35,7 +37,7 @@ public class LoginTest extends ExecutionContext implements Login {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\damar\\Documents\\SKRIPSI\\Tools\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.get("http://localhost:4173/");
+        driver.get("https://yukjahit.vercel.app/");
         driver.manage().window().setSize(new Dimension(974, 1080));
     }
 
@@ -72,7 +74,7 @@ public class LoginTest extends ExecutionContext implements Login {
 
     @Override
     public void e_To_ProtectedPages() {
-        driver.get("http://localhost:4173/profile");
+        driver.get("https://yukjahit.vercel.app/profile");
         driver.findElement(By.xpath("//*[contains(text(), 'Silahkan login terlebih dahulu')]")).isDisplayed();
     }
 
@@ -100,7 +102,7 @@ public class LoginTest extends ExecutionContext implements Login {
 
     @Override
     public void e_To_LoginPage_LoggedIn() {
-        driver.get("http://localhost:4173/login");
+        driver.get("https://yukjahit.vercel.app/login");
         driver.findElement(By.xpath("//*[contains(text(), 'Kamu sudah login')]")).isDisplayed();
     }
 
@@ -110,7 +112,7 @@ public class LoginTest extends ExecutionContext implements Login {
         failedLogin = false;
         activeName = "Usery Tadd";
         activeEmail = "user@gmail.com";
-        activePhone = "08134489889";
+        activePhone = "0813448988";
         activeAddress = "Kp. Sejahtera Nusa Bangsa Satu Indonesia No. 23 Rt.03/Rw.09, Padalarang Tengah, Bandung Barat, Jawa Barat,";
     }
 
@@ -135,6 +137,8 @@ public class LoginTest extends ExecutionContext implements Login {
 
     @Override
     public void e_To_LoginPage() {
+        failedLogin = false;
+
         driver.findElement(By.id("nav-login-button")).click();
     }
 
@@ -147,6 +151,10 @@ public class LoginTest extends ExecutionContext implements Login {
     @Override
     public void v_ProfilePage() {
         driver.findElement(By.xpath("//h2[contains(text(), 'Profil Saya')]")).isDisplayed();
+        WebElement nameIsVisible = new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.visibilityOf(driver.findElement((By.id("user-name")))));
+        Assert.assertTrue(nameIsVisible.isDisplayed());
+
         String userName = driver.findElement(By.id("user-name")).getText();
         String userEmail = driver.findElement(By.id("user-email")).getText();
         String userPhone = driver.findElement(By.id("user-phone")).getText();

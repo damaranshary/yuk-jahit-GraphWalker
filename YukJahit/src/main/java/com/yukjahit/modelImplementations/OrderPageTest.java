@@ -6,7 +6,10 @@ import org.graphwalker.java.annotation.GraphWalker;
 
 import org.junit.Assert;
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 
 import static com.yukjahit.modelImplementations.YukJahitTest.driver;
@@ -14,13 +17,15 @@ import static com.yukjahit.modelImplementations.YukJahitTest.driver;
 @GraphWalker
 public class OrderPageTest extends ExecutionContext implements OrderPage {
 
+    public static final String expectedOrderTitle = "Daftar Transaksi | YukJahit";
     public static boolean isOrderEmpty = false;
-    public static String expectedStatusOrder = "Dibatalkan";
+    public static String expectedStatusOrder = "Selesai";
     public static String actualStatusOrder; //Selesai, Dibatalkan, Kedaluwarsa, Belum dibayar
     public static Integer totalOrderCards;
 
     @Override
     public void v_OrderPage_SHARED() {
+        Assert.assertEquals(expectedOrderTitle, driver.getTitle());
         Assert.assertTrue(driver.findElement(By.xpath("//h2[contains(text(), 'Daftar Transaksi')]")).isDisplayed());
 
         if (isOrderEmpty) {
@@ -49,7 +54,7 @@ public class OrderPageTest extends ExecutionContext implements OrderPage {
     public void e_Confirm_CancelOrder() {
         if (actualStatusOrder.equals("Belum dibayar") && !isOrderEmpty) {
             driver.findElement(By.id("cancel-order-confirmation-button")).click();
-            expectedStatusOrder = "Dibatalkan";
+            driver.findElement(By.id("cancel-order-close-button")).click();
         }
     }
 
@@ -65,7 +70,14 @@ public class OrderPageTest extends ExecutionContext implements OrderPage {
     @Override
     public void v_Verify_CancelOrder_Success() {
         if (actualStatusOrder.equals("Belum dibayar") && !isOrderEmpty) {
-            Assert.assertTrue(driver.findElement(By.xpath("//*[contains(text(), 'Status akan diupdate dalam beberapa saat')]")).isDisplayed());
+            WebElement toastElement = driver.findElement(By.xpath("//*[contains(text(), 'Status akan diupdate dalam beberapa saat')]"));
+            Assert.assertTrue(toastElement.isDisplayed());
+
+            boolean toastIsInvisible = new WebDriverWait(driver, Duration.ofSeconds(10))
+                    .until(ExpectedConditions.invisibilityOf(toastElement));
+            if (toastIsInvisible) {
+                expectedStatusOrder = "Dibatalkan";
+            }
         }
     }
 

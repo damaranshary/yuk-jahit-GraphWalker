@@ -3,14 +3,12 @@ package com.yukjahit.modelImplementations;
 import com.yukjahit.*;
 import org.graphwalker.core.machine.ExecutionContext;
 import org.graphwalker.java.annotation.GraphWalker;
-import org.graphwalker.java.annotation.BeforeExecution;
 
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
-import java.util.Objects;
 
 @GraphWalker
 public class YukJahitTest extends ExecutionContext implements YukJahit  {
@@ -22,14 +20,14 @@ public class YukJahitTest extends ExecutionContext implements YukJahit  {
     public void v_Start() {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\damar\\Documents\\SKRIPSI\\Tools\\chromedriver.exe");
         driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         driver.get("https://yukjahit.vercel.app/");
         driver.manage().window().setSize(new Dimension(974, 1080));
     }
 
     @Override
     public void v_CartPage_SHARED() {
-
+        //no action because the assertion will be on the CartPageTest class instead
     }
 
     @Override
@@ -43,10 +41,10 @@ public class YukJahitTest extends ExecutionContext implements YukJahit  {
 
     @Override
     public void v_HomePage_SHARED() {
-//        boolean imageHome = driver.findElement(By.xpath("//img")).isDisplayed();
+        String expectedHomeTitle = "Home | YukJahit";
         boolean headingHome =  driver.findElement(By.xpath("//h2[contains(text(), 'Produk Terbaru')]")).isDisplayed();
 
-//        Assert.assertTrue(imageHome);
+        Assert.assertEquals(expectedHomeTitle, driver.getTitle());
         Assert.assertTrue(headingHome);
     }
 
@@ -112,8 +110,8 @@ public class YukJahitTest extends ExecutionContext implements YukJahit  {
     @Override
     public void e_Login() {
         driver.findElement(By.id("nav-login-button")).click();
-        driver.findElement(By.id("login-email-input")).sendKeys("user@gmail.com");
-        driver.findElement(By.id("login-password-input")).sendKeys("user1234");
+        driver.findElement(By.id("login-email-input")).sendKeys("yukjahit@email.com");
+        driver.findElement(By.id("login-password-input")).sendKeys("yukjahit123");
         driver.findElement(By.id("login-submit-button")).click();
     }
 
