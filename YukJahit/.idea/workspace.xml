@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6512e0f7-db6d-4052-ac90-7b3c4a78c3d4" name="Changes" comment="fix" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2RlrtehLg23dIl4hLZbuJob4ofp" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "fullSystem",
+    "last_opened_file_path": "C:/Users/damar/Documents/SKRIPSI/YukJahit/yuk-jahit-GraphWalker/login",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\damar\Documents\SKRIPSI\YukJahit\yuk-jahit-GraphWalker\YukJahit\target\graphwalker-reports" />
+      <recent name="C:\Users\damar\Documents\SKRIPSI\YukJahit\yuk-jahit-GraphWalker\YukJahit\src\main\java\com\yukjahit" />
+      <recent name="C:\Users\damar\Documents\SKRIPSI\YukJahit\yuk-jahit-GraphWalker\YukJahit\src\main\java\com\yukjahit\modelImplementations" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="YukJahit" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="YukJahit" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6512e0f7-db6d-4052-ac90-7b3c4a78c3d4" name="Changes" comment="" />
+      <created>1687835725079</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1687835725079</updated>
+      <workItem from="1687835726425" duration="7561000" />
+      <workItem from="1687909686114" duration="34370000" />
+      <workItem from="1688000838122" duration="9831000" />
+      <workItem from="1688104620776" duration="5092000" />
+      <workItem from="1688442244997" duration="6711000" />
+      <workItem from="1688480815605" duration="47000" />
+      <workItem from="1688482498762" duration="414000" />
+      <workItem from="1688483162701" duration="2267000" />
+      <workItem from="1688511093865" duration="909000" />
+      <workItem from="1688512829030" duration="187000" />
+      <workItem from="1688513066890" duration="852000" />
+      <workItem from="1688526887853" duration="1542000" />
+      <workItem from="1689248460379" duration="10837000" />
+      <workItem from="1689266641106" duration="315000" />
+    </task>
+    <task id="LOCAL-00001" summary="idk, maybe something">
+      <created>1687969852462</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1687969852462</updated>
+    </task>
+    <task id="LOCAL-00002" summary="the Core models and Test Case">
+      <created>1687969925936</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1687969925936</updated>
+    </task>
+    <task id="LOCAL-00003" summary="the core models and test cases">
+      <created>1687970025957</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1687970025957</updated>
+    </task>
+    <task id="LOCAL-00004" summary="the test cases for profile(0%), order, detail product, and cart">
+      <created>1687970090597</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1687970090597</updated>
+    </task>
+    <task id="LOCAL-00005" summary="fix">
+      <created>1689266916901</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1689266916901</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="idk, maybe something" />
+    <MESSAGE value="the Core models and Test Case" />
+    <MESSAGE value="the core models and test cases" />
+    <MESSAGE value="the test cases for profile(0%), order, detail product, and cart" />
+    <MESSAGE value="fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+  </component>
+</project>
