@@ -9,5 +9,8 @@
         <module name="fullSystem" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="yukjahit" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
