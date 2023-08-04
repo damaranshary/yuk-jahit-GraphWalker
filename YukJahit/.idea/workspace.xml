@@ -4,35 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6512e0f7-db6d-4052-ac90-7b3c4a78c3d4" name="Changes" comment="fix">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="6512e0f7-db6d-4052-ac90-7b3c4a78c3d4" name="Changes" comment="please, tell me this work">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fullSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/fullSystem.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/cache.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/com/yukjahit/Login.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/com/yukjahit/Register.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/com/yukjahit/Register_And_Login.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/com/yukjahit/modelImplementations/LoginTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/com/yukjahit/modelImplementations/RegisterTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/com/yukjahit/observers/GraphStreamObserver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/com/yukjahit/runners/GraphStreamApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/classes/com/yukjahit/runners/WebSocketApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/generated-sources/graphwalker/cache.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/generated-sources/graphwalker/com/yukjahit/Login.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/generated-sources/graphwalker/com/yukjahit/Register.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/generated-test-sources/graphwalker/cache.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/graphwalker-reports/Report bug (User name not detected fast enough).xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/graphwalker-reports/TEST-GraphWalker-20230626T112535455.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/graphwalker-reports/TEST-GraphWalker-20230626T112705110.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/graphwalker-reports/TEST-GraphWalker-20230626T112854451.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/graphwalker-reports/TEST-GraphWalker-20230704T214402649.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/graphwalker-reports/TEST-GraphWalker-20230704T214742183.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/graphwalker-reports/TEST-GraphWalker-20230704T215832328.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/graphwalker-reports/TEST-GraphWalker-20230705T110303837.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../login/src/main/java/com/yukjahit/modelImplementations/RegisterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../login/src/main/java/com/yukjahit/modelImplementations/RegisterTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../login/target/classes/com/yukjahit/modelImplementations/RegisterTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../login/target/classes/com/yukjahit/modelImplementations/RegisterTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,7 +105,8 @@
       <workItem from="1689248460379" duration="10837000" />
       <workItem from="1689266641106" duration="315000" />
       <workItem from="1689319860184" duration="455000" />
-      <workItem from="1689320491069" duration="35000" />
+      <workItem from="1689320491069" duration="453000" />
+      <workItem from="1691148270959" duration="6575000" />
     </task>
     <task id="LOCAL-00001" summary="idk, maybe something">
       <created>1687969852462</created>
@@ -167,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689266916901</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="please, tell me this work">
+      <created>1689320630987</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1689320630987</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -202,6 +185,7 @@
     <MESSAGE value="the core models and test cases" />
     <MESSAGE value="the test cases for profile(0%), order, detail product, and cart" />
     <MESSAGE value="fix" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix" />
+    <MESSAGE value="please, tell me this work" />
+    <option name="LAST_COMMIT_MESSAGE" value="please, tell me this work" />
   </component>
 </project>

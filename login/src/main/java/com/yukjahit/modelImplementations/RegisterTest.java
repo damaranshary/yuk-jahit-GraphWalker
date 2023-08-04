@@ -100,7 +100,7 @@ public class RegisterTest extends ExecutionContext implements Register {
     @Override
     public void e_Register_With_ValidData() {
         if (alreadyRegistered == 0) {
-            registerMethod(driver, "YukJahit MBT (10)", "yukjahitmbt10@email.com", "yukjahit123", "yukjahit123",
+            registerMethod(driver, "YukJahit MBT (26)", "yukjahitmbt26@email.com", "yukjahit123", "yukjahit123",
                     "08123456789", "Address of YukJahit (Valid Data)");
         }
         alreadyRegistered++;
@@ -111,10 +111,10 @@ public class RegisterTest extends ExecutionContext implements Register {
         if (alreadyRegistered > 1) {
             driver.findElement(By.id("nav-login-button")).click();
         }
-        LoginTest.loginMethod(driver,"yukjahitmbt10@email.com", "yukjahit123" );
+        LoginTest.loginMethod(driver,"yukjahitmbt5@email.com", "yukjahit123" );
         LoginTest.failedLogin = false;
-        LoginTest.activeName = "YukJahit MBT (10)";
-        LoginTest.activeEmail = "yukjahitmbt10@email.com";
+        LoginTest.activeName = "YukJahit MBT (5)";
+        LoginTest.activeEmail = "yukjahitmbt5@email.com";
         LoginTest.activePhone = "08123456789";
         LoginTest.activeAddress = "Address of YukJahit (Valid Data)";
     }
